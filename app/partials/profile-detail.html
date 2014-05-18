@@ -1,0 +1,23 @@
+
+
+	<div>
+	<h1>User name: {{profile.username}}</h1>
+	</div>
+
+<div class="row">
+<div class="col-sm-8">
+  <img src="{{imgUrl}}">
+</div>
+
+	<div class="col-sm-4">
+		<dl>
+	      <dt>Status:</dt>
+	      <dd>{{profile.status}}</dd>
+	    </dl>
+		<dl>
+	      <dt>Last known location:</dt>
+	      <dd>{{profile.location.lat}}:{{profile.location.lng}}</dd>
+	    </dl>
+		
+	</div>
+</div>

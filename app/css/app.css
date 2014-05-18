@@ -4,6 +4,9 @@ body {
   padding-top: 20px;
 }
 
+ul{
+	list-style-type: none;
+}
 
 .phone-images {
   width: 450px;
@@ -15,6 +18,14 @@ body {
 
 .phones {
   list-style: none;
+}
+
+.row{
+ 	border-bottom: 1px solid gray;
+}
+
+li.row{
+ 	border-top: 1px solid gray;
 }
 
 .thumb {

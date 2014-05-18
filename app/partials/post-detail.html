@@ -1,0 +1,61 @@
+
+
+<a href="#/board/{{post.boardId}}">Back to board</a>
+
+<div class="row">
+	<div class="col-sm-8">
+	<h1>Title: {{post.title}}</h1>
+	</div>
+	<div class="col-sm-4">
+		<p>Author: 
+			<a ng-if="post.player.id" href="#/profile/{{post.player.id}}">{{post.author}}</a>
+			<span ng-if="!post.player.id">{{post.author}}</span>
+		</p>
+		<p><strong>Posted:</strong> {{post.created}}</p>
+		<p><strong>Valid until:</strong> {{post.expires}}</p>
+		<!--<p><strong>Fun:</strong> <span ng-bind="fun"></span></p> -->
+	</div>
+</div>
+<!-- 
+<div ng-init="firstName = 'John'; lastName = 'Doe';">
+  <strong>First name:</strong> {{firstName}}<br />
+  <strong>Last name:</strong> <span ng-bind="lastName"></span><br />
+  <br />
+  <label>Set the first name: <input type="text" ng-model="firstName"/></label><br />
+  <label>Set the last name: <input type="text" ng-model="lastName"/></label>
+  		<label>change fun: <input type="text" ng-model="fun"/></label>
+  		<label>change count: <input type="text" ng-model="post.repliesCount"/></label>
+  <div>
+		<input type="submit" ng-click="play()"/>
+</div>
+</div>
+ -->
+<div>
+		<span>{{post.notice}}</span>
+</div>
+
+<div ng-if="imgUrl">
+	<img ng-src="{{imgUrl}}" >
+</div>
+<div ng-if="post.repliesCount>0">
+	<h3>Replies : <span>{{post.repliesCount}}</span></h3>
+	<ul>
+		<li class="row" ng-repeat="reply in post.replies">
+			<div class="col-sm-4">
+				<h5>Author: {{reply.author}}</h5>
+				<h5>Replied: {{reply.created}}</h5>
+			</div>
+			<div class="col-sm-8">
+				<p>{{reply.reply}}</p>
+			</div>
+		</li>
+	</ul>
+</div>
+<div>
+	<form ng-controller="PostDetailCtrl" ng-submit="reply()">
+		<textarea rows="5" cols="20" ng-model="reply.reply" placeholder="Reply to this post"></textarea>
+		<input type="submit" ng-click="Submit"/>
+	</form>
+</div>
+
+

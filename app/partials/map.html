@@ -1,0 +1,15 @@
+
+<p>This will have the map</p>
+
+<div class="row" ng-repeat="board in boards">
+	<div class="col-sm-4">
+		<p>Board name: <a href="#/board/{{board.id}}">{{board.name}}</a></p>
+		<p>Category: {{board.category}}</p>
+		<p>Creator: <a href="#/profile/{{board.creatorId}}">{{board.creator}}</a></p>
+	</div>
+	<div class="col-sm-4">
+		<p>Location: {{board.locationName}}</p>
+		<p>Co-ordinates: {{board.location}}</p>
+	</div>
+</div>
+

@@ -2,16 +2,15 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var spApp = angular.module('sp-spa', [
   'ngRoute',
   'phonecatAnimations',
-
-  'phonecatControllers',
+  'spControllers',
   'phonecatFilters',
-  'phonecatServices'
+  'spServices'
 ]);
 
-phonecatApp.config(['$routeProvider',
+spApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/phones', {
@@ -22,7 +21,27 @@ phonecatApp.config(['$routeProvider',
         templateUrl: 'partials/phone-detail.html',
         controller: 'PhoneDetailCtrl'
       }).
+      when('/board/:boardId', {
+        templateUrl: 'partials/board-detail.html',
+        controller: 'BoardDetailCtrl'
+      }).
+      when('/profile/:userId', {
+          templateUrl: 'partials/profile-detail.html',
+          controller: 'ProfileDetailCtrl'
+    }).
+    when('/post/:postId', {
+        templateUrl: 'partials/post-detail.html',
+        controller: 'PostDetailCtrl'
+      }).
+      when('/map', {
+          templateUrl: 'partials/map.html',
+          controller: 'MapCtrl'
+        }).
+        when('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'LoginCtrl'
+          }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/map'
       });
   }]);

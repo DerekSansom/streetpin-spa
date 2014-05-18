@@ -1,0 +1,41 @@
+
+
+<div class="row">
+	<div class="col-sm-8">
+		<h1>Board name: {{board.name}}</h1>
+		<a href="#/map">map</a>
+	</div>
+	<div class="col-sm-4">
+		<dl>
+	      <dt>Location:</dt>
+	      <dd>{{board.locationName}}</dd>
+	    </dl>
+		<dl>
+	      <dt>Category:</dt>
+	      <dd>{{board.category}}</dd>
+	    </dl>
+		<dl>
+	      <dt>Creator:</dt>
+	      <dd><a href="#/profile/{{board.creatorId}}">{{board.creator}}</a></dd>
+	    </dl>
+		
+	</div>
+</div>
+
+<div class="row">
+
+    <a href="#/post/{{notice.id}}" class="col-sm-4" ng-repeat="notice in board.notices">
+      	<h2>Title: {{notice.title}}</h2>
+		<span>Author: {{notice.author}}</span>
+	</a>
+</div>
+
+<div class="row">
+
+    <a class="col-sm-4" ng-repeat="ad in board.ads">
+      	<img src="http://localhost:8080/shine/images/ad/23-4e1ff6d57f29d7-51502582.jpg" >
+		<span>Author: {{notice.author}}</span>
+	</a>
+</div>
+
+
